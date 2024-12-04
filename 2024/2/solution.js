@@ -10,6 +10,7 @@ function solution1() {
     let trendDirection = undefined;
     let stepCount = 1;
     let isSafe = true;
+    let dangerCount = 0;
     //console.log(report.split(' '));
 
     report.split(' ').forEach(step => {
@@ -39,10 +40,14 @@ function solution1() {
       }
       previousStep = currentStep;
       stepCount++;
+    if (!isSafe) {
+      dangerCount++;
+      isSafe = true;
+    }
     });
 
     //console.log("safe: " + isSafe);
-    if (isSafe) {
+    if (dangerCount < 2) {
       safeReports++
     }
 
