@@ -40,10 +40,10 @@ function solution1() {
       }
       previousStep = currentStep;
       stepCount++;
-    if (!isSafe) {
-      dangerCount++;
-      isSafe = true;
-    }
+      if (!isSafe) {
+        dangerCount++;
+        isSafe = true;
+      }
     });
 
     //console.log("safe: " + isSafe);
